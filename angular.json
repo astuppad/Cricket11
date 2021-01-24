@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "Cricket11": {
@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Cricket11"
+    }
+  },
+  "defaultProject": "Cricket11",
+  "cli": {
+    "analytics": "55106dea-5e2f-4c3d-80d0-122c59ebee49"
+  }
 }
