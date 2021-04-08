@@ -192,7 +192,7 @@ export class AppComponent {
   }
   
   validateWicketKeepers(player) {
-    let minWicketKeepers = this.conditions[0]["Wicket Keepers"];
+    let minWicketKeepers = this.conditions && this.conditions.length > 0 ? this.conditions[0]["Wicket Keepers"] : undefined;
     let numOfWicketKeepers = player.filter(player => player.Category == "Wicket Keeper") && player.filter(player => player.Category == "Wicket Keeper").length;
     if (minWicketKeepers && numOfWicketKeepers && minWicketKeepers == numOfWicketKeepers ) {
       return true;
@@ -203,7 +203,7 @@ export class AppComponent {
   }
 
   validateBatsman(player) {
-    let minBatsman = this.conditions[0]["Batsmen"];
+    let minBatsman = this.conditions && this.conditions.length > 0 ? this.conditions[0]["Batsmen"]: undefined;
     let numOfBatsmens = player.filter(player => player.Category == "Batsman") && player.filter(player => player.Category == "Batsman").length;
     if (minBatsman && numOfBatsmens && minBatsman == numOfBatsmens) {
       return true;
@@ -214,7 +214,7 @@ export class AppComponent {
   }
 
   validateBowler(player) {
-    let minBowlers = this.conditions[0]["Bowlers"];
+    let minBowlers = this.conditions && this.conditions.length > 0 ? this.conditions[0]["Bowlers"] : undefined;
     let numOfBowlers = player.filter(player => player.Category == "Bowlers") && player.filter(player => player.Category == "Bowlers").length;
     if (minBowlers && numOfBowlers && minBowlers == numOfBowlers) {
       return true;
@@ -225,7 +225,7 @@ export class AppComponent {
   }
 
   validateAllRounder(player) {
-    let minAllRounders = this.conditions[0]["All Rounders"];
+    let minAllRounders = this.conditions && this.conditions.length > 0 ? this.conditions[0]["All Rounder"]: undefined;
     let numOfAllRounders = player.filter(player => player.Category == "All Rounder") && player.filter(player => player.Category == "All Rounder").length;
     if (minAllRounders && numOfAllRounders && minAllRounders == numOfAllRounders) {
       return true;
