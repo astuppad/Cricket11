@@ -194,19 +194,26 @@ export class AppComponent {
   validateWicketKeepers(player) {
     let minWicketKeepers = this.conditions && this.conditions.length > 0 ? this.conditions[0]["Wicket Keepers"] : undefined;
     let numOfWicketKeepers = player.filter(player => player.Category == "Wicket Keeper") && player.filter(player => player.Category == "Wicket Keeper").length;
-    if (minWicketKeepers && numOfWicketKeepers && minWicketKeepers == numOfWicketKeepers ) {
-      return true;
+    if (minWicketKeepers) {
+      if(numOfWicketKeepers && minWicketKeepers == numOfWicketKeepers ) {
+        return true;
+      } else {
+        return false;
+      }
     } else if(numOfWicketKeepers && numOfWicketKeepers >= 1 && numOfWicketKeepers <= 4) {
       return true;
     }
-    return false;
   }
 
   validateBatsman(player) {
     let minBatsman = this.conditions && this.conditions.length > 0 ? this.conditions[0]["Batsmen"]: undefined;
     let numOfBatsmens = player.filter(player => player.Category == "Batsman") && player.filter(player => player.Category == "Batsman").length;
-    if (minBatsman && numOfBatsmens && minBatsman == numOfBatsmens) {
-      return true;
+    if (minBatsman) {
+      if(numOfBatsmens && minBatsman == numOfBatsmens) {
+        return true;
+      } else {
+        return true;
+      }
     } else if(numOfBatsmens && numOfBatsmens >= 3 && numOfBatsmens <= 5) {
       return true;
     }
@@ -216,9 +223,13 @@ export class AppComponent {
   validateBowler(player) {
     let minBowlers = this.conditions && this.conditions.length > 0 ? this.conditions[0]["Bowlers"] : undefined;
     let numOfBowlers = player.filter(player => player.Category == "Bowler") && player.filter(player => player.Category == "Bowler").length;
-    if (minBowlers && numOfBowlers && minBowlers == numOfBowlers) {
-      return true;
-    } else if(numOfBowlers && numOfBowlers >= 3 && numOfBowlers <= 5) {
+    if (minBowlers) {
+      if (numOfBowlers && minBowlers == numOfBowlers) {
+        return true;
+      } else {
+        return true;
+      }
+    } else if(numOfBowlers >= 3 && numOfBowlers <= 5) {
       return true;
     }
     return false;
@@ -227,8 +238,12 @@ export class AppComponent {
   validateAllRounder(player) {
     let minAllRounders = this.conditions && this.conditions.length > 0 ? this.conditions[0]["All Rounder"]: undefined;
     let numOfAllRounders = player.filter(player => player.Category == "All Rounder") && player.filter(player => player.Category == "All Rounder").length;
-    if (minAllRounders && numOfAllRounders && minAllRounders == numOfAllRounders) {
-      return true;
+    if (minAllRounders) {
+      if (numOfAllRounders && minAllRounders == numOfAllRounders) {
+        return true;
+      } else {
+        return false;
+      }
     } else if(numOfAllRounders && numOfAllRounders >= 2 && numOfAllRounders <= 4) {
       return true;
     }
