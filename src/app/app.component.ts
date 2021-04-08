@@ -215,7 +215,7 @@ export class AppComponent {
 
   validateBowler(player) {
     let minBowlers = this.conditions && this.conditions.length > 0 ? this.conditions[0]["Bowlers"] : undefined;
-    let numOfBowlers = player.filter(player => player.Category == "Bowlers") && player.filter(player => player.Category == "Bowlers").length;
+    let numOfBowlers = player.filter(player => player.Category == "Bowler") && player.filter(player => player.Category == "Bowler").length;
     if (minBowlers && numOfBowlers && minBowlers == numOfBowlers) {
       return true;
     } else if(numOfBowlers && numOfBowlers >= 3 && numOfBowlers <= 5) {
