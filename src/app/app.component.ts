@@ -212,7 +212,7 @@ export class AppComponent {
       if(numOfBatsmens && minBatsman == numOfBatsmens) {
         return true;
       } else {
-        return true;
+        return false;
       }
     } else if(numOfBatsmens && numOfBatsmens >= 3 && numOfBatsmens <= 5) {
       return true;
@@ -227,7 +227,7 @@ export class AppComponent {
       if (numOfBowlers && minBowlers == numOfBowlers) {
         return true;
       } else {
-        return true;
+        return false;
       }
     } else if(numOfBowlers >= 3 && numOfBowlers <= 5) {
       return true;
@@ -236,13 +236,13 @@ export class AppComponent {
   }
 
   validateAllRounder(player) {
-    let minAllRounders = this.conditions && this.conditions.length > 0 ? this.conditions[0]["All Rounder"]: undefined;
+    let minAllRounders = this.conditions && this.conditions.length > 0 ? this.conditions[0]["All Rounders"]: undefined;
     let numOfAllRounders = player.filter(player => player.Category == "All Rounder") && player.filter(player => player.Category == "All Rounder").length;
     if (minAllRounders) {
       if (numOfAllRounders && minAllRounders == numOfAllRounders) {
         return true;
       } else {
-        return false;
+        return false
       }
     } else if(numOfAllRounders && numOfAllRounders >= 2 && numOfAllRounders <= 4) {
       return true;
